@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="de-ch">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<title>Roulette</title>	
+		<script type="text/javascript" src="live.js"></script>
+		<script
+		  src="jquery-3.2.1.min.js"
+		  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+		  crossorigin="anonymous"></script>
+		<script type="text/javascript" src="jslib.j.js"></script>
+		<link rel="stylesheet" href="bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<script src="bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+		<style type="text/css">
+			body{
+				padding-top: 10px;
+			}
+			.table{
+				margin-bottom: 0;
+			}
+			.stdout-panel{
+				
+				!overflow-y: scroll;
+				!padding: 10px;
+			}
+			.out-table{
+				overflow-y: scroll;
+				max-height: 90vh;
+			}
+			.options-panel{
+				!min-height: 45vh;
+				!padding: 10px;
+			}
+			.stats-panel{
+				!min-height: 45vh;
+				!padding: 10px;
+			}
+		</style>
+		<script type="text/javascript" src="roulette.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="col-sm-6">
+				<div class="panel panel-default options-panel">
+					<div class="panel-heading">
+						<h3 class="panel-title">Optionen</h3>
+					</div>
+					<div class="panel-body">
+						<form>
+							<div class="form-group">
+								<label for="kapital">Kapital</label>
+								<input type="number" name="kapital" placeholder="Kapital" class="form-control kapital-val">
+							</div>
+							<div class="form-group">
+								<label for="einsatz">Einsatz</label>
+								<input type="number" name="einsatz" placeholder="Einsatz" class="form-control einsatz-val">
+							</div>
+							<div class="form-group">
+								<label for="spiele">Anzahl Spiele</label>
+								<input type="number" name="spiele" placeholder="Anzahl" class="form-control games-val" value="100">
+							</div>
+							<div class="form-group">
+								<label for="farbmodus">Farbmodus</label>
+								<select class="form-control color-mode">
+									<option>Nur Schwarz</option>
+									<option>Nur Rot</option>
+									<option>Nach Gewinn wird gewechselt</option>
+									<option>Nach Gewinn wird zufällig gewählt</option>
+								</select>
+							</div>
+							<div class="form-group">
+								<input type="checkbox" name="endkapital" class="endkapital-val">
+								<label for="endkapital">Mit Endkapital weiterspielen</label>
+							</div>
+							<button type="button" class="roulette-go btn btn-primary">Berechnen</button>
+						</form>
+					</div>
+				</div>
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title">Statistik</h3>
+					</div>
+					<div class="panel-body stats-panel">
+						
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-6">
+				<div class="panel panel-default stdout-panel">
+					<div class="panel-heading">
+						<h3 class="panel-title">Output</h3>
+					</div>
+					<div class="out-table">
+						<table class="table table-condensed">
+							<tbody class="stdout">					
+							</tbody>
+						</table>
+					</div>
+				</div>				
+			</div>
+		</div>
+	</body>
+</html>
